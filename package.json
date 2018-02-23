@@ -1,0 +1,28 @@
+{
+  "name": "op-challenge",
+  "version": "1.0.0",
+  "description": "This was done as part of a job application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "http-server ./ -p 1337"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/makker/op-challenge.git"
+  },
+  "keywords": [
+    "responsive",
+    "css",
+    "animation"
+  ],
+  "author": "Markus Ruottu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/makker/op-challenge/issues"
+  },
+  "homepage": "https://github.com/makker/op-challenge#readme",
+  "dependencies": {
+    "http-server": "^0.11.1"
+  }
+}
