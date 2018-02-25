@@ -30,7 +30,7 @@ body.dev > .main {
 }
 
 .no-select {
-    -webkit-tap-highlight-color: transparent;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
