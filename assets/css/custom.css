@@ -29,7 +29,8 @@ body.dev > .main {
     background-repeat: no-repeat;
 }
 
-.noSelect {
+.no-select {
+    -webkit-tap-highlight-color: transparent;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
