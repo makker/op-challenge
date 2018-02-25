@@ -1,64 +1,215 @@
 body {
     font-family: Chevin;
-    margin: 0;
-    padding: 0;
-    font-size: 16px;
 }
 
 /* Insert custom styles here */
 
-main {
+/* GENERAL STYLES */
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    font-weight: 300;
+    color: #323232;
+}
+p {
+    color: #6e6e6e;
+}
+h1, h2, h3 {
+    margin: 0;
+}
+body > .main {
     margin: 0 16px;
     max-width: 688px;
     padding-top: 45px;
 }
-body.dev main {
+body.dev > .main {
     background-image: url(/expander.png);
     background-position: -96px -96px;
     background-repeat: no-repeat;
 }
-main > header {
+
+/* main HEADER */
+body > .main > header {
     height: 48px;
     margin-bottom: 14px;
-}
-h1, h2, h3 {
-    margin: 0;
 }
 h1 {
     font-weight: 300;
     font-size: 26px;
 }
+
+/* SECTION */
 section {
-    border-top: 1px solid rgba(0,0,0,.15);
-    padding-top: 19px;
+    border-top-width: 1px;
+    border-top-color: rgba(0,0,0,.15);
+    border-top-style: solid;
+    padding: 20px 0 0;
+}
+section:last-child {
+    border-bottom-width: 1px;
+    border-bottom-color: rgba(0,0,0,.15);
+    border-bottom-style: solid;
 }
 
-section.closed .container-info {
-    height: 0;
-    overflow-y: hidden;
-}
 section header {
-    height: 66px;
-    margin-bottom: 18px;
+    padding: 0 0 20px;
+    transition-property: color;
+    transition-duration: .3s;
+    transition-timing-function: ease-out;
 }
-.icon-menu {
-    float: right;
-    height: 100%;
+section.open header {
+    border-bottom-width: 1px;
+    border-bottom-color: rgba(0,0,0,.15);
+    border-bottom-style: solid;
+    color: #ff6a10;
+    cursor: pointer;
 }
-.icon-menu img {
+section.open header p {
+    color: #ff6a10;
+}
+
+header .header-texts {
+    display: inline-block;
+    position: relative;
     vertical-align: middle;
-}
-.icon-menu .v-center-helper {
-    height: 100%;
-    vertical-align: middle;
+    width: -webkit-calc(100% - 40px);
+    width: -moz-calc(100% - 40px);
+    width: calc(100% - 40px);
+    cursor: pointer;
 }
 h2 {
-    font-weight: 600;
-    font-size: 19px;
-    height: 25px;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
 }
 section header h2 + p {
     margin: 0;
+}
+
+.icon-menu {
+    width: 28px;
+    height: 28px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 12px;
+    line-height: 0;
+    transition-duration: .3s;
+    transition-property: transform;
+    transition-timing-function: ease-out;
+}
+section.open .icon-menu {
+    transform: rotate(-180deg);
+}
+.svg-chevron {
+    width: 28px;
+    height: 28px;
+}
+.icon-menu .svg-chevron path {
+    fill: #969696;
+}
+section.open .icon-menu .svg-chevron path {
+    fill: #ff6a10;
+}
+
+.cutoutColor1 {
+    stop-color: rgb(240, 240, 240);
+}
+.cutoutColor2 {
+    stop-color: rgb(240, 240, 240);
+}
+.wrapper-cutout {
+    width: 20px;
+    bottom: -5px;
+    position: relative;
+    left: 50%;
+    margin-bottom: -20px;
+}
+.svg-cutout {
+    height: 0;
+    width: 20px;
+    margin-left: -10px;
+    transition-duration: .3s;
+    transition-property: height;
+    transition-timing-function: ease-out;
+}
+.svg-cutout polygon {
+    stroke: none;
+    fill: url(#GradientCutout);
+}
+.svg-cutout polyline {
+    fill: none;
+    stroke: #d9d9d9;
+    stroke-width: 1;
+}
+section.open .svg-cutout {
+    height: 10px;
+}
+
+/* SECTION "BODY" */
+.container-info {
+    transition-duration: .3s;
+    transition-property: height;
+    transition-timing-function: ease-out;
+    height: 0;
+    background-color: #fafafa;
+    background-image: linear-gradient(to bottom,rgba(0,0,0,.05) 0,transparent 5px);
+    border-left: 1px solid rgba(0,0,0,.15);
+    border-right: 1px solid rgba(0,0,0,.15);
+    overflow-y: hidden;    background-image: linear-gradient(to bottom,rgba(0,0,0,.04) 0,transparent 5px);
+}
+body.dev .container-info {
+    background-color: transparent;
+}
+section.open .container-info {
+    height: auto;
+}
+.wrapper-info {
+    padding: 32px 19px;
+    border-bottom: 1px solid rgba(0,0,0,.15);
+}
+.container-info h3 {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+.inforow {
+    margin-bottom: 16px;
+}
+.inforow:last-child {
+    margin-bottom: 0px;
+}
+.container-info .col-1-2 {
+    width: 100%;
+    font-size: 16px;
+    line-height: 20px;
+    display: inline-block;
+}
+.container-info .col-2-2 {
+    font-size: 18px;
+    line-height: 24px;
+    display: inline-block;
+}
+.container-info hr {
+    width: 100%;
+    margin-top: 32px;
+    margin-bottom: 39px;
+    margin-left: 0;
+    margin-right: 0;
+    border-style: inset;
+    border-width: 1px;
+    border-color: rgba(0,0,0,.15);
+    border-top-style: none;
+}
+
+@media (min-width: 720px) {
+    body > .main {
+        margin: 0 auto;
+    }
+    .container-info .col-1-2, .container-info .col-2-2 {
+        width: 49%;
+    }
 }
 
 /* Use a media query to add a breakpoint at 800px */
@@ -66,10 +217,14 @@ section header h2 + p {
     .container-main {
         margin: 0 auto;
     }
-    body.dev .container-main {
+    body.dev > .main {
         background-position: -520px -96px;
     }
-    .left, .main, .right {
-      width:100%; /*The width is 100%, when the viewport is 800px or smaller*/
+    .wrapper-info {
+        padding: 40px;
+    }
+    .inforow {
+        margin-bottom: 0;
+        padding: 6px 0;
     }
 }
