@@ -17,6 +17,12 @@ function inactivateSections(keep) {
         }
     });
 }
+function setConteinerHeight(section) {
+    // Set calculated height as a style to enable CSS transition
+    var container = section.getElementsByClassName("container-info")[0];
+    var wrapper = container.getElementsByClassName("wrapper-info")[0];
+    container.style.height = wrapper.clientHeight + "px";
+}
 function activateSection(section) {
     var alreadyOpen = (section.className.indexOf("open") > -1);
     inactivateSections();
@@ -27,10 +33,7 @@ function activateSection(section) {
         classes.push("open");
         section.className = classes.join(" ");
 
-        // Set calculated height as a style to enable CSS transition
-        var container = section.getElementsByClassName("container-info")[0];
-        var wrapper = container.getElementsByClassName("wrapper-info")[0];
-        container.style.height = wrapper.clientHeight + "px";
+        setConteinerHeight(section);
     }
 }
 function init() {
@@ -49,6 +52,11 @@ function init() {
         sectionBody.style.height = 0;
     });
 
+    addEvent(window, "resize", function(event) {
+        var openedSection = document.querySelectorAll("section.open")[0];
+        if(openedSection) setConteinerHeight(openedSection);
+    });
+
     // If dev url param then add class dev to body to enable some dev enhancements
     // This feature should be removed before deploying to production
     if (window.location.href.indexOf("?dev") > -1) {
@@ -60,12 +68,9 @@ function init() {
     
         // Open a section for inspection
         var sectionToOpen = document.querySelectorAll("section")[1];
-        console.log("sectionToOpen: ", sectionToOpen);
         activateSection(sectionToOpen);
     }
 };
-
-document.addEventListener('DOMContentLoaded', init, false);
 
 /* Polyfill for NodeList.forEach from 
  * https://developer.mozilla.org/en-US/docs/Web/API/NodeList/forEach
@@ -78,3 +83,15 @@ if (window.NodeList && !NodeList.prototype.forEach) {
         }
     };
 }
+
+var addEvent = function(object, type, callback) {
+    if (object == null || typeof(object) == 'undefined') return;
+    if (object.addEventListener) {
+        object.addEventListener(type, callback, false);
+    } else if (object.attachEvent) {
+        object.attachEvent("on" + type, callback);
+    } else {
+        object["on"+type] = callback;
+    }
+};
+addEvent(document, "DOMContentLoaded", init);
