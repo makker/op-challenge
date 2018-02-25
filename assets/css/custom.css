@@ -60,9 +60,18 @@ section:last-child {
 
 section header {
     padding: 20px 0;
+    -webkit-transition-property: color;
+    -o-transition-property: color;
+    -moz-transition-property: color;
     transition-property: color;
-    transition-duration: .3s;
-    transition-timing-function: ease-out;
+    -webkit-transition-duration: .3s;
+       -moz-transition-duration: .3s;
+         -o-transition-duration: .3s;
+            transition-duration: .3s;
+    -webkit-transition-timing-function: ease-out;
+       -moz-transition-timing-function: ease-out;
+         -o-transition-timing-function: ease-out;
+            transition-timing-function: ease-out;
     cursor: pointer;
 }
 section header * {
@@ -103,12 +112,27 @@ section header h2 + p {
     vertical-align: middle;
     margin-left: 12px;
     line-height: 0;
-    transition-duration: .3s;
+    -webkit-transition-duration: .3s;
+       -moz-transition-duration: .3s;
+         -o-transition-duration: .3s;
+            transition-duration: .3s;
+    -webkit-transition-property: -webkit-transform;
+    transition-property: -webkit-transform;
+    -o-transition-property: -o-transform;
+    -moz-transition-property: transform, -moz-transform;
     transition-property: transform;
-    transition-timing-function: ease-out;
+    transition-property: transform, -webkit-transform, -moz-transform, -o-transform;
+    -webkit-transition-timing-function: ease-out;
+       -moz-transition-timing-function: ease-out;
+         -o-transition-timing-function: ease-out;
+            transition-timing-function: ease-out;
 }
 section.open .icon-menu {
-    transform: rotate(-180deg);
+    -webkit-transform: rotate(-180deg);
+       -moz-transform: rotate(-180deg);
+        -ms-transform: rotate(-180deg);
+         -o-transform: rotate(-180deg);
+            transform: rotate(-180deg);
 }
 .svg-chevron {
     width: 28px;
@@ -138,9 +162,18 @@ section.open .icon-menu .svg-chevron path {
     height: 0;
     width: 20px;
     margin-left: -10px;
-    transition-duration: .3s;
+    -webkit-transition-duration: .3s;
+       -moz-transition-duration: .3s;
+         -o-transition-duration: .3s;
+            transition-duration: .3s;
+    -webkit-transition-property: height;
+    -o-transition-property: height;
+    -moz-transition-property: height;
     transition-property: height;
-    transition-timing-function: ease-out;
+    -webkit-transition-timing-function: ease-out;
+       -moz-transition-timing-function: ease-out;
+         -o-transition-timing-function: ease-out;
+            transition-timing-function: ease-out;
 }
 .svg-cutout polygon {
     stroke: none;
@@ -157,15 +190,27 @@ section.open .svg-cutout {
 
 /* SECTION "BODY" */
 .container-info {
-    transition-duration: .3s;
+    -webkit-transition-duration: .3s;
+       -moz-transition-duration: .3s;
+         -o-transition-duration: .3s;
+            transition-duration: .3s;
+    -webkit-transition-property: height;
+    -o-transition-property: height;
+    -moz-transition-property: height;
     transition-property: height;
-    transition-timing-function: ease-out;
+    -webkit-transition-timing-function: ease-out;
+       -moz-transition-timing-function: ease-out;
+         -o-transition-timing-function: ease-out;
+            transition-timing-function: ease-out;
     height: 0;
     background-color: #fafafa;
+    background-image: -webkit-linear-gradient(top,rgba(0,0,0,.05) 0,transparent 5px);
+    background-image: -moz-linear-gradient(top,rgba(0,0,0,.05) 0,transparent 5px);
+    background-image: -o-linear-gradient(top,rgba(0,0,0,.05) 0,transparent 5px);
     background-image: linear-gradient(to bottom,rgba(0,0,0,.05) 0,transparent 5px);
     border-left: 1px solid rgba(0,0,0,.15);
     border-right: 1px solid rgba(0,0,0,.15);
-    overflow-y: hidden;    background-image: linear-gradient(to bottom,rgba(0,0,0,.04) 0,transparent 5px);
+    overflow-y: hidden;    background-image: -webkit-linear-gradient(top,rgba(0,0,0,.04) 0,transparent 5px);    background-image: -moz-linear-gradient(top,rgba(0,0,0,.04) 0,transparent 5px);    background-image: -o-linear-gradient(top,rgba(0,0,0,.04) 0,transparent 5px);    background-image: linear-gradient(to bottom,rgba(0,0,0,.04) 0,transparent 5px);
 }
 body.dev .container-info {
     background-color: transparent;
@@ -206,7 +251,7 @@ section.open .container-info {
     margin-bottom: 39px;
     margin-left: 0;
     margin-right: 0;
-    border-style: inset;
+    border-style: solid;
     border-width: 1px;
     border-color: rgba(0,0,0,.15);
     border-top-style: none;
