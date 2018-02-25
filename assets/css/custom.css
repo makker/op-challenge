@@ -30,13 +30,9 @@ body.dev > .main {
 }
 
 .no-select {
+    outline: none;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+    -webkit-tap-highlight-color: transparent;
 }
 
 /* main HEADER */
@@ -71,11 +67,6 @@ section header {
 }
 section header * {
     cursor: pointer;
-}
-section, section:focus, section header *, section header *:focus, .no-select, .no-select:focus {
-    outline: none;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    -webkit-tap-highlight-color: transparent;
 }
 section.open header {
     border-bottom-width: 1px;
