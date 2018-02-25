@@ -72,6 +72,10 @@ section header {
 section header * {
     cursor: pointer;
 }
+section header *:focus {
+    outline: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
 section.open header {
     border-bottom-width: 1px;
     border-bottom-color: rgba(0,0,0,.15);
