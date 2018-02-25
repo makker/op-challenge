@@ -29,3 +29,6 @@ Classes and elements would be named differently if this the page was part of a l
 Js and CSS include some features that can be activated by adding '?dev' after the index.html url. Features were used in development and would be removed before deploy to prod.
 - CSS adds a layout tracing image as bg
 - Opens first item
+
+## Online
+https://makker.github.io/op-challenge/index.html
