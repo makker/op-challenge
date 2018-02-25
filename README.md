@@ -5,7 +5,7 @@ This was done as part of a job application
 IE >= 9
 All all modern desktop and mobile browser, but no niche browsers like Opera Mini
 
-Tested with latest Win Chrome, Win FF, Edge, IE 9 - 11, and Android Chrome in Mobile and tablet.
+Tested with latest Win Chrome, Win FF, Edge, IE 9 - 11, and Android Chrome in mobile and tablet.
 
 ## Solutions
 
