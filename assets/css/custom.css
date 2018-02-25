@@ -29,6 +29,15 @@ body.dev > .main {
     background-repeat: no-repeat;
 }
 
+.noSelect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
 /* main HEADER */
 body > .main > header {
     height: 48px;
@@ -44,19 +53,23 @@ section {
     border-top-width: 1px;
     border-top-color: rgba(0,0,0,.15);
     border-top-style: solid;
-    padding: 20px 0 0;
 }
 section:last-child {
     border-bottom-width: 1px;
     border-bottom-color: rgba(0,0,0,.15);
     border-bottom-style: solid;
+    margin-bottom: 20px;
 }
 
 section header {
-    padding: 0 0 20px;
+    padding: 20px 0;
     transition-property: color;
     transition-duration: .3s;
     transition-timing-function: ease-out;
+    cursor: pointer;
+}
+section header * {
+    cursor: pointer;
 }
 section.open header {
     border-bottom-width: 1px;
@@ -76,7 +89,6 @@ header .header-texts {
     width: -webkit-calc(100% - 40px);
     width: -moz-calc(100% - 40px);
     width: calc(100% - 40px);
-    cursor: pointer;
 }
 h2 {
     font-weight: 500;
@@ -219,6 +231,9 @@ section.open .container-info {
     }
     body.dev > .main {
         background-position: -520px -96px;
+    }
+    section:last-child {
+        margin-bottom: 40px;
     }
     .wrapper-info {
         padding: 40px;
